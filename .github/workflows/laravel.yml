@@ -54,6 +54,9 @@ jobs:
     - name: Debug MySQL container
       run: docker logs $(docker ps -q --filter "ancestor=mysql:5.7")
 
+    - name: Run migrations
+      run: php artisan migrate --force
+
     - name: Execute tests (Unit and Feature tests) via PHPUnit/Pest
       env:
         DB_CONNECTION: mysql
