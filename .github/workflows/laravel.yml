@@ -20,13 +20,6 @@ jobs:
         ports:
           - 3306:3306
         options: --health-cmd="mysqladmin ping --silent" --health-interval=10s --health-timeout=5s --health-retries=5
-      command: >
-          bash -c "
-            docker-entrypoint.sh mysqld &
-            sleep 10;
-            mysql -u root -p'Evargas12.@' -e 'ALTER USER \"root\"@\"localhost\" IDENTIFIED BY \"Evargas12.@\";';
-            wait
-          "
 
     steps:
     - uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
@@ -34,6 +27,10 @@ jobs:
         php-version: '8.2'
 
     - uses: actions/checkout@v4
+
+    - name: Set MySQL root password
+      run: |
+        docker run --rm --link mysql:db mysql:5.7 mysql -h db -u root -p'Evargas12.@' -e "ALTER USER 'root'@'localhost' IDENTIFIED BY 'Evargas12.@';"
 
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
@@ -60,9 +57,6 @@ jobs:
 
     - name: Debug MySQL container
       run: docker logs $(docker ps -q --filter "ancestor=mysql:5.7")
-
-    - name: Run migrations
-      run: php artisan migrate --force
 
     - name: Execute tests (Unit and Feature tests) via PHPUnit/Pest
       env:
