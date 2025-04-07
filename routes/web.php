@@ -12,6 +12,8 @@ Route::view('/', "livewire/login")->name('default');//EGVG 05/04/25: Ruta por de
 Route::group(['middleware'=>'auth'], function(){
     Route::view('/dashboard', "livewire/dashboard")->name('dashboard');
     Route::get('/logout', [Logout::class, 'logout'])->name('logout');
+    Route::view('/categorias', 'livewire.categorias')->name('categorias');
+    Route::view('/estados', 'livewire.estados')->name('estados');
 
 });
 

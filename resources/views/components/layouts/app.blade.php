@@ -12,6 +12,15 @@
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container">
               <a class="navbar-brand" href="{{ URL('/dashboard') }}" wire:navigate>Home</a>
+              @guest
+              @else
+                <a href="{{ route('categorias') }}" class="navbar-brand" class="navbar-brand">
+                    Categorias
+                </a>
+                <a href="{{ route('estados') }}" class="navbar-brand" class="navbar-brand">
+                    Estados
+                </a>
+              @endguest
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
