@@ -13,7 +13,7 @@ class Login extends Component
     public function login()
     {
         //EGVG 05/04/25: Verifica si las credenciales del usuario son correctas con Auth::attempt.
-        if (Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
+        if (Auth::attempt(['email' => request('email'), 'password' => request('password'), 'activo' => 1])) {
             //EGVG 05/04/25: Si las credenciales son válidas, redirige al usuario al dashboard con un mensaje de éxito.
             return redirect()->route('dashboard')->with('success', 'Inicio de sesión exitoso.');
         } else {
