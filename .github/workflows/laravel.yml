@@ -28,10 +28,6 @@ jobs:
 
     - uses: actions/checkout@v4
 
-    - name: Set MySQL root password
-      run: |
-        docker run --rm --link mysql:db mysql:5.7 mysql -h db -u root -p'Evargas12.@' -e "ALTER USER 'root'@'localhost' IDENTIFIED BY 'Evargas12.@';"
-
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
 
@@ -54,6 +50,10 @@ jobs:
           echo "Waiting for MySQL...";
           sleep 5;
         done
+
+    - name: Set MySQL root password
+      run: |
+          docker exec mysql mysql -u root -p'Evargas12.@' -e "ALTER USER 'root'@'localhost' IDENTIFIED BY 'Evargas12.@';"
 
     - name: Debug MySQL container
       run: docker logs $(docker ps -q --filter "ancestor=mysql:5.7")
