@@ -43,7 +43,7 @@ jobs:
     - name: Wait for MySQL to be ready
       run: |
         for i in {1..30}; do
-          if mysqladmin ping -h"mysql" -u"root" -p"Evargas.12.@" --silent; then
+          if mysqladmin ping -h"mysql" -u"root" -p"Evargas12.@" --silent; then
             echo "MySQL is ready!";
             break;
           fi
