@@ -21,6 +21,14 @@ jobs:
           - 3306:3306
         options: --health-cmd="mysqladmin ping --silent" --health-interval=10s --health-timeout=5s --health-retries=5
 
+      entrypoint: |
+        bash -c "
+        # Inicializa la base de datos y luego cambia la contraseña de root
+        docker-entrypoint.sh mysqld &
+        sleep 10
+        mysql -u root -p'Evargas12.@' -e \"ALTER USER 'root'@'localhost' IDENTIFIED BY 'NuevaContraseña';\"
+        wait
+        "
     steps:
     - uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
       with:
