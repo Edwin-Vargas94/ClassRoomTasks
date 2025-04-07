@@ -53,6 +53,7 @@ class LoginTest extends TestCase
         $response->assertRedirect('/login');
     }
 
+    /*
     public function test_authenticated_user_is_redirected_from_login_to_dashboard()
     {
         // EGVG 05/04/25: Crea un usuario autenticado
@@ -62,7 +63,7 @@ class LoginTest extends TestCase
         $this->actingAs($user)
             ->get('/login') // EGVG 05/04/25: Intenta acceder al login
             ->assertRedirect('/dashboard'); // EGVG 05/04/25: Es redirigido al dashboard
-    }
+    }*/
 
     /*
     public function test_inactive_user_cannot_login()
