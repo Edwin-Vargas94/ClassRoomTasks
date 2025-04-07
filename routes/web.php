@@ -5,6 +5,8 @@ use App\Livewire\Registro;
 use App\Livewire\Login;
 use App\Livewire\Logout;
 use App\Livewire\Dashboard;
+use App\Livewire\Estados;
+use App\Livewire\Categorias;
 
 Route::view('/', "livewire/login")->name('default');//EGVG 05/04/25: Ruta por defecto que redirige a la vista de login.
 
@@ -12,8 +14,8 @@ Route::view('/', "livewire/login")->name('default');//EGVG 05/04/25: Ruta por de
 Route::group(['middleware'=>'auth'], function(){
     Route::view('/dashboard', "livewire/dashboard")->name('dashboard');
     Route::get('/logout', [Logout::class, 'logout'])->name('logout');
-    Route::view('/categorias', 'livewire.categorias')->name('categorias');
-    Route::view('/estados', 'livewire.estados')->name('estados');
+    Route::get('/categorias', Categorias::class)->name('categorias');
+    Route::get('/estados', Estados::class)->name('estados');
 
 });
 

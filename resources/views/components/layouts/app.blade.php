@@ -14,12 +14,21 @@
               <a class="navbar-brand" href="{{ URL('/dashboard') }}" wire:navigate>Home</a>
               @guest
               @else
-                <a href="{{ route('categorias') }}" class="navbar-brand" class="navbar-brand">
-                    Categorias
-                </a>
-                <a href="{{ route('estados') }}" class="navbar-brand" class="navbar-brand">
-                    Estados
-                </a>
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Catálogos
+                            </a>
+                         <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="{{ route('categorias') }}">Categorías</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{ route('estados') }}">Estados</a>
+                            </li>
+                         </ul>
+                    </li>
+                </ul>
               @endguest
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
