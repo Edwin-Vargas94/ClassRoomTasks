@@ -6,6 +6,7 @@ use App\Livewire\Login;
 use App\Livewire\Logout;
 use App\Livewire\Dashboard;
 
+Route::view('/', "livewire/login")->name('default');//EGVG 05/04/25: Ruta por defecto que redirige a la vista de login.
 
 //EGVG 05/04/25: Grupo de rutas que no permiten ir a las vistas si no se ha iniciado sesión.
 Route::group(['middleware'=>'auth'], function(){
