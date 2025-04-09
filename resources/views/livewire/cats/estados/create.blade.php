@@ -1,8 +1,7 @@
 <form>
-
     <div class="form-group">
         <label for="exampleFormControlInput1">Estado:</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter title" wire:model="estado">
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Título estado" wire:model="estado">
         @error('estado') <span class="text-danger">{{ $message }}</span>@enderror
     </div>
     <br>

@@ -30,14 +30,16 @@ class Categorias extends Component
     {
         //EGVG 05/04/25: Valida que el campo 'categoria' sea requerido.
         $validatedDate = $this->validate([
-            'categoria' => 'required',
+            'categoria' => 'required',]
+            , [ //EGVG 05/04/25: Personaliza los mensajes de error.
+                'categoria.required' => 'El campo categoria es obligatorio.',
         ]);
 
         //EGVG 05/04/25: Crea una nueva categoría en la base de datos con los datos validados.
         Categoria::create($validatedDate);
 
         //EGVG 05/04/25: Genera un mensaje de éxito para indicar que la categoría fue agregada correctamente.
-        session()->flash('message', 'Categoria agregada correctamente');
+        session()->flash('message', 'Categoria agregada exitosamente.');
 
         //EGVG 05/04/25: Resetea los campos de entrada.
         $this->resetInputFields();

@@ -13,19 +13,20 @@ class User extends Authenticatable
     use HasFactory, Notifiable;
 
     /**
-     * The attributes that are mass assignable.
+     * //EGVG 07/04/25: Propiedads que se pueden asignar en masa
      *
      * @var list<string>
      */
-    protected $fillable = [
+    protected $fillable = [ 
         'name',
         'email',
         'password',
+        'administrador',
         'activo',
     ];
 
     /**
-     * The attributes that should be hidden for serialization.
+     * //EGVG 07/04/25: Propiedades que se deben ocultar para los arrays
      *
      * @var list<string>
      */

@@ -9,7 +9,7 @@ class Estado extends Model
 {
 
     use HasFactory;
-    //EGVG 05/04/25: Define los campos de la tabla que son asignables en masa.
+    //EGVG 06/04/25: Define los campos de la tabla que son asignables en masa.
     protected $fillable = [
 
         'estado'

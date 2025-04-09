@@ -18,7 +18,7 @@
             <tr>
                 <th>Num.</th>
                 <th>Categoria</th>
-                <th width="200px">Acciones</th>
+                <th width="200px">Tareas</th>
             </tr>
         </thead>
 

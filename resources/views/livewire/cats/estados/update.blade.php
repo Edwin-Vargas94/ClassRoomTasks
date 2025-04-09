@@ -1,5 +1,4 @@
 <form>
-
     <input type="hidden" wire:model="estado_id">
 
     <div class="form-group">
@@ -10,5 +9,4 @@
     <br>
     <button wire:click.prevent="update()" class="btn btn-dark">Actualizar</button>
     <button wire:click.prevent="cancel()" class="btn btn-danger">Cancelar</button>
-
 </form>

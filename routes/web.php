@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Tareas;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Registro;
 use App\Livewire\Login;
@@ -7,6 +8,7 @@ use App\Livewire\Logout;
 use App\Livewire\Dashboard;
 use App\Livewire\Estados;
 use App\Livewire\Categorias;
+use App\Livewire\InsertarTareas;
 
 Route::view('/', "livewire/login")->name('default');//EGVG 05/04/25: Ruta por defecto que redirige a la vista de login.
 
@@ -16,6 +18,11 @@ Route::group(['middleware'=>'auth'], function(){
     Route::get('/logout', [Logout::class, 'logout'])->name('logout');
     Route::get('/categorias', Categorias::class)->name('categorias');
     Route::get('/estados', Estados::class)->name('estados');
+
+
+//EGVG 05/04/25: Rutas tareas:
+Route::get('/tareas/insertar', InsertarTareas::class)->name('tareas-crear');
+Route::get('/tareas/{id}/editar', \App\Livewire\EditarTareas::class)->name('tareas-editar');
 
 });
 
@@ -27,3 +34,7 @@ Route::group(['middleware'=>'guest'], function(){
 
 Route::post('/registro1', [Registro::class, 'register'])->name('registro1');//EGVG 05/04/25: Ruta que usa el post para recibir los valores que el usuario ingresa para su registro.
 Route::post('/inicia-sesion', [Login::class, 'login'])->name('inicia-sesion');//EGVG 05/04/25: Ruta que usa el post para recibir los valores para iniciar sesion.
+
+
+
+
