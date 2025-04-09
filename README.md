@@ -1,66 +1,88 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🗂️ Gestión de Tareas
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**Gestión de Tareas** es una aplicación web desarrollada con Laravel y Livewire que permite organizar, asignar y administrar tareas de manera eficiente, dependiendo del rol del usuario. La plataforma cuenta con un sistema de autenticación que ofrece una experiencia dinámica e intuitiva tanto para usuarios como para administradores.
 
-## About Laravel
+## ✨ Características principales
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- Inicio de sesión con control de roles (Administrador / Usuario)
+- Creación, edición y eliminación de tareas
+- Asignación de tareas a usuarios (solo para administradores)
+- Gestión de catálogos: estados y categorías
+- Interfaz responsive con Blade y Livewire
+- Filtros automáticos por usuario y permisos
+- Vista diferenciada por rol
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🛠️ Tecnologías utilizadas
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Laravel**
+- **Livewire**
+- **Blade components**
+- **TailwindCSS**
+- **MySQL**
+- **PHP**
+- **Visual Studio Code**
 
-## Learning Laravel
+## ⚙️ Requisitos
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- PHP >= 8.1
+- Composer
+- MySQL o MariaDB
+- Node.js y NPM
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## 🚀 Instalación
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1. Clonar el repositorio:
+   ```bash
+   git clone https://github.com/Edwin-Vargas94/ClassRoomTasks.git
+   cd ClassRoomTasks
 
-## Laravel Sponsors
+## 📝 Caso de uso de la aplicación
+Este proyecto tiene como objetivo ofrecer una solución escalable para la gestión de tareas con control de acceso por roles. El sistema permite a un administrador asignar tareas a su equipo de trabajo, quienes podrán gestionarlas de manera controlada, considerando:
+•	Fecha de vencimiento
+•	Prioridad de la tarea
+•	Categoría asignada
+•	Estado actual de la tarea
+Además, el administrador tiene la posibilidad de crear otras cuentas administrativas y gestionar opciones dentro de los catálogos del sistema.
+________________________________________
+## 💾 Base de datos
+Se incluye un respaldo de la base de datos MySQL, que ya contiene:
+•	Los catálogos predefinidos
+•	Un usuario administrador:
+Correo: admin@hotmail.com
+Contraseña: admin
+Este usuario es el único con permisos de administrador en esta etapa inicial.
+•	Un usuario:
+Correo: edwin_glz94@hotmail.com
+Contraseña: egvg
+________________________________________
+## 👤 Roles del sistema
+🛠 Administrador:
+•	Gestiona todas las tareas (propias y de otros usuarios)
+•	Asigna tareas a usuarios
+•	Administra catálogos de categorías y estados
+•	Crea nuevos administradores
+•	Tiene acceso a funcionalidades avanzadas
+👤 Usuario:
+•	Crea, edita, elimina y visualiza solo sus propias tareas
+•	No tiene acceso a catálogos
+•	No puede asignar tareas
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 📚 Estructura del proyecto
+- app/Http/Livewire: Componentes Livewire
+- resources/views/livewire: Vistas dinámicas
+- app/Models: Modelos de la aplicación
+- routes/web.php: Rutas principales
 
-### Premium Partners
+**IMPORTANTE**
+En la carpeta DocumentacionTareas se adjunta los siguientes documentos.
+- Diagrama ER de base de datos utilizada.
+- Respaldo de la base de datos.
+- Manuales de usuario.
+- Matriz de pruebas.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+- 🧑‍💻 Autor
+- Desarrollado por Edwin Gibran Vargas González
+- 📌 GitHub: Edwin-Vargas94
 
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 📝 Licencia
+Este proyecto es de uso público. Puedes usarlo, modificarlo y compartirlo libremente.
